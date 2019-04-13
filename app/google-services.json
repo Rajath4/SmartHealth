@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "993590852981",
+    "firebase_url": "https://smarthealth-19172.firebaseio.com",
+    "project_id": "smarthealth-19172",
+    "storage_bucket": "smarthealth-19172.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993590852981:android:f19ed39c62090a59",
+        "android_client_info": {
+          "package_name": "com.hackathon.smarthealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993590852981-1a4kc3err1bdfe7esud6f4os45oum1av.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackathon.smarthealth",
+            "certificate_hash": "49ce983c33e87960ed635915acfb43f94f9eb7b7"
+          }
+        },
+        {
+          "client_id": "993590852981-aiea5er7g65cniulba3l19s5vqdu8qnp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALmEaIdk_4Zx_zyV9TRPcSSg_oLcjK_-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993590852981-aiea5er7g65cniulba3l19s5vqdu8qnp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

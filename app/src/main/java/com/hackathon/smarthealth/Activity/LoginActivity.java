@@ -1,13 +1,16 @@
 package com.hackathon.smarthealth.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -30,24 +33,22 @@ import com.hackathon.smarthealth.R;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private static final String TAG = "LoginActivity";
+
+
+    private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
 
-    private GoogleSignInClient mGoogleSignInClient;
+    public static GoogleSignInClient mGoogleSignInClient;
+    private TextView mStatusTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
 
-//        FirebaseApp.initializeApp(this);
-//
-//        // Initialize Firebase Auth
-//        mAuth = FirebaseAuth.getInstance();
 
-        // [START configure_signin]
-        // Configure sign-in to request the user's ID, email address, and basic
-        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+
         // [START configure_signin]
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -59,16 +60,25 @@ public class LoginActivity extends AppCompatActivity {
         // [START build_client]
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        // [END build_client]
 
-        SignInButton signInToGoogle = (SignInButton) findViewById(R.id.sign_in_button);
-        signInToGoogle.setOnClickListener(new View.OnClickListener() {
+        // [START customize_button]
+        // Set the dimensions of the sign-in button.
+        SignInButton signInButton = findViewById(R.id.sign_in_button);
+        signInButton.setSize(SignInButton.SIZE_STANDARD);
+        signInButton.setColorScheme(SignInButton.COLOR_LIGHT);
+
+        signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signIn();
             }
         });
 
+
+        // [END customize_button]
     }
+
 
     @Override
     public void onStart() {
@@ -78,7 +88,23 @@ public class LoginActivity extends AppCompatActivity {
         // Check for existing Google Sign In account, if the user is already signed in
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        //updateUI(account);
+        if(account != null){
+            Intent HomeIntent = new Intent(LoginActivity.this, MainActivity.class);
+
+            String personName = account.getDisplayName();
+            String personGivenName = account.getGivenName();
+            String personFamilyName = account.getFamilyName();
+            String personEmail = account.getEmail();
+            String personId = account.getId();
+            Uri personPhoto = account.getPhotoUrl();
+
+            HomeIntent.putExtra("personName",personName);
+            HomeIntent.putExtra("personEmail",personEmail);
+            HomeIntent.putExtra("personPhoto",personPhoto.toString());
+
+            startActivity(HomeIntent);
+
+        }
         // [END on_start_sign_in]
     }
 
@@ -102,13 +128,26 @@ public class LoginActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
+            Intent HomeIntent = new Intent(LoginActivity.this, MainActivity.class);
+
+            String personName = account.getDisplayName();
+            String personGivenName = account.getGivenName();
+            String personFamilyName = account.getFamilyName();
+            String personEmail = account.getEmail();
+            String personId = account.getId();
+            Uri personPhoto = account.getPhotoUrl();
+
+            HomeIntent.putExtra("personName",personName);
+            HomeIntent.putExtra("personEmail",personEmail);
+            HomeIntent.putExtra("personPhoto",personPhoto.toString());
+
+            startActivity(HomeIntent);
+
             // Signed in successfully, show authenticated UI.
-            //updateUI(account);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            //updateUI(null);
+            Log.e(TAG, "signInResult:failed code=" + e.getStatusCode());
         }
     }
     // [END handleSignInResult]
@@ -118,20 +157,12 @@ public class LoginActivity extends AppCompatActivity {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
+
     // [END signIn]
 
     // [START signOut]
-    private void signOut() {
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // [START_EXCLUDE]
-                        //updateUI(null);
-                        // [END_EXCLUDE]
-                    }
-                });
-    }
+
     // [END signOut]
 
     // [START revokeAccess]
@@ -141,11 +172,10 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         // [START_EXCLUDE]
-                        //updateUI(null);
                         // [END_EXCLUDE]
+                        Log.e("dlkjsk","LOGGED");
                     }
                 });
     }
-    // [END revokeAccess]
 
 }

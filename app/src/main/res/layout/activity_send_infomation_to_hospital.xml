@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_checked"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:id="@+id/done"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Done !!"
+        android:layout_below="@+id/done"
+        android:maxLines="3"
+        android:textColor="#00ff00"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:id="@+id/textdone"
+        app:fontFamily="@font/montserratmedium"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Complaint Booked successfully."
+        android:layout_below="@+id/textdone"
+        android:maxLines="3"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/montserratmedium"
+        android:id="@+id/compl"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Ambulance is on its way."
+        android:layout_below="@+id/compl"
+        android:maxLines="3"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:id="@+id/ambl"
+        app:fontFamily="@font/montserratmedium"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_route"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:id="@+id/track"
+        android:layout_below="@+id/ambl"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Please Wait!!"
+        android:layout_below="@+id/compl"
+        android:maxLines="3"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:id="@+id/amb"
+        app:fontFamily="@font/montserratmedium"
+        android:textSize="20sp"/>
+
+
+
+
+</LinearLayout>

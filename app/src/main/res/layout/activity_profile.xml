@@ -19,7 +19,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:focusable="true"
-            android:focusableInTouchMode="true">
+            android:focusableInTouchMode="true"
+            android:paddingBottom="30dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -28,7 +29,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="275dp"
-                    android:background="@drawable/bg"
+                    android:background="@drawable/bg1"
                     android:orientation="vertical">
 
                     <ImageView
@@ -83,18 +84,29 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="vertical"
-                            android:id="@+id/call_gardian">
+                            android:id="@+id/back">
 
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
-                                android:src="@drawable/ic_phone_black_24dp" />
+                                android:src="@drawable/ic_arrow_back_black_24dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingTop="10dp"
-                                android:text="Call Guardian" />
+                                android:text="Home" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
 
                         </LinearLayout>
 
@@ -104,39 +116,18 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="vertical"
-                            android:id="@+id/profile">
+                            android:id="@+id/save">
 
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
-                                android:src="@drawable/ic_person_outline_black_24dp" />
+                                android:src="@drawable/ic_save_black_24dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingTop="10dp"
-                                android:text="Profile" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:id="@+id/logout">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_exit_to_app_black_24dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="10dp"
-                                android:text="Logout" />
+                                android:text="Save" />
 
                         </LinearLayout>
 
@@ -150,8 +141,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
@@ -161,15 +152,74 @@
                     android:padding="10dp">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:hint="Blood Group">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Note"
-                            android:id="@+id/note"/>
+                            android:id="@+id/Blood_group"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Address">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/Address"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Guardian Name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/Guardian_name" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Guardian Phone">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/Guardian_phone"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Guardian Address">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/Guardian_address"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Work Location">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/Work_location"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,88 +229,8 @@
 
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            app:cardElevation="4dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingRight="10sp"
-                android:paddingLeft="10sp"
-                android:weightSum="2">
-
-
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:text="Call For Fire Engine"
-                    app:icon="@drawable/ic_fire_truck"
-                    android:layout_margin="10sp"
-                    android:minHeight="60sp"
-                    android:id="@+id/call_fire_service"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:text="Report An Accident"
-                    android:id="@+id/report_an_accident"
-                    app:icon="@drawable/ic_crash"
-                    android:layout_margin="10sp"
-                    android:minHeight="60sp"/>
-
-
-            </LinearLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="Call For Ambulance"
-                app:icon="@drawable/ic_ambulance"
-                android:layout_margin="10sp"
-                android:minHeight="60sp"
-                android:id="@+id/notify_about_emergency"/>
-
-
-
-
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/police"
-                    style="@style/Widget.MaterialComponents.Button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Call For Police"
-                    android:minHeight="60sp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
-
-
-
-        </LinearLayout>
-
-
-        </com.google.android.material.card.MaterialCardView>
 
 
 

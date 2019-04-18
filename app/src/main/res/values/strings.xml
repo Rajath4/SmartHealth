@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">SmartHealth</string>
-    <string name="server_client_id">993590852981-8ri6ck6v8k5ln0jvo4r9kkf337hktl48.apps.googleusercontent.com</string>
+    <string name="app_name">SAFE 24x7</string>
+    <string name="server_client_id">993590852981-kcu0i39ljgn5022krb5d714m98658c6r.apps.googleusercontent.com</string>
+
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

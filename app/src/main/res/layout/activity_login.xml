@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.LoginActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/back"
+    android:layout_centerHorizontal="true">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:fontFamily="@font/montserratmedium"
+        android:text="Welcome to SMART CITY"
+        android:textColor="@android:color/white"
+        android:id="@+id/main"
+        android:textSize="24sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main"
+        android:id="@+id/mang"
+        android:layout_centerHorizontal="true"
+        app:fontFamily="@font/montserratmedium"
+        android:text="Mangaluru Mahanagara Palike"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/main"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/icon"
+        android:layout_marginTop="45dp"
+        android:id="@+id/icon"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To get Started, Please Login with Google"
+        app:fontFamily="@font/montserratmedium"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/icon"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:id="@+id/getstarted"
+        android:textColor="#ffffff"
+        />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        tools:visibility="gone"
 
-</LinearLayout>
+        android:layout_below="@+id/getstarted"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="195dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="By clicking on signin you agree to our \nterms and conditions"
+        app:fontFamily="@font/montserratmedium"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/sign_in_button"
+        android:layout_marginTop="15dp"
+        android:id="@+id/privacy"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/view"
+        android:layout_below="@+id/privacy"
+        android:background="@android:color/white"
+        android:layout_marginTop="65dp"/>
+
+    <TextView
+        android:id="@+id/abt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:layout_marginTop="195dp"
+        android:gravity="center|center_horizontal"
+        android:text="Mangaluru City Corporation,\nM.G.Road, Lalbaug,\nMangaluru.\nPin Code -575003\nPhone: 0824 -2220310\ncommissioner.mcc@gmail.com\nwww.mangalorecity.mrc.gov.in\n \n          \u00a9All Rights Reserved. "
+        android:textSize="16sp"
+        android:textStyle="bold"
+
+
+        app:fontFamily="@font/montserratmedium" />
+
+
+
+</RelativeLayout>
+
+
